@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Calcolatore Tasse & Convertitore</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>💼 Calcolatore Tasse</h1>
+      <button class="dark-mode-toggle" onclick="toggleDarkMode()" title="Passa alla modalità scura">🌙</button>
+    </div>
+    <input type="number" id="reddito" placeholder="Inserisci il tuo reddito lordo in €" />
+    <button onclick="calcolaTasse()">Calcola</button>
+    <div id="risultato" class="output-box"></div>
+
+    <div class="tabella-riepilogo">
+      <h3>Riepilogo</h3>
+      <p><strong>Reddito Lordo:</strong> <span id="val-reddito">-</span></p>
+      <p><strong>Tasse da pagare:</strong> <span id="val-tasse">-</span></p>
+      <p><strong>Aliquota media:</strong> <span id="val-aliquota">-</span></p>
+      <p><strong>Reddito netto:</strong> <span id="val-netto">-</span></p>
+    </div>
+
+    <div class="converter-section">
+      <h2>💱 Convertitore Valuta</h2>
+      <div class="converter">
+        <input type="number" id="valutaInput" placeholder="Importo" />
+        <select id="conversione">
+          <option value="eurToUsd">EUR ➝ USD</option>
+          <option value="usdToEur">USD ➝ EUR</option>
+          <option value="eurToGbp">EUR ➝ GBP</option>
+          <option value="gbpToEur">GBP ➝ EUR</option>
+          <option value="eurToJpy">EUR ➝ JPY</option>
+          <option value="jpyToEur">JPY ➝ EUR</option>
+          <option value="eurToChf">EUR ➝ CHF</option>
+          <option value="chfToEur">CHF ➝ EUR</option>
+          <option value="eurToCad">EUR ➝ CAD</option>
+          <option value="cadToEur">CAD ➝ EUR</option>
+        </select>
+        <button onclick="convertiValuta()">Converti</button>
+        <p id="risultatoConversione">Risultato: -</p>
+        <p id="eur-usd-rate">Tasso attuale: -</p>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
